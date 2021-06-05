@@ -22,6 +22,8 @@
 >   * ```git merge --no-ff branch1``` ==> 合并后的历史有分支 可能看出曾经做过合并.
 >   * ```git rebase branch1``` ==> 也是把 branch1 分支合并到当前分支 
 > * 10, ```git remote add origin https://github.com/JasonDu1993/gitskill.git``` ==> 添加远程仓库
+> * 11, ```git push <远程主机> <本地分支名> <远程分支名>``` ==> 远程分支名如没有则创建
+> * 12,```
 ## git --> 常见问题
 > * 1,如果 git push 失败 先git pull 
 >   > 如果git push失败，先git pull如果git pull失败，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：git branch --set-upstream dev origin/dev，（现在好像改成git branch --set-upstream-to=origin/dev dev）然后在git pull，git push origin master
