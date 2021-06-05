@@ -1,26 +1,25 @@
 [toc]
 ## Promise 封装AJAX
-
  ```
-   function senAjax(url){
-        return new Promise((resolve,reject)=>{
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET",url);
-            xhr.send();
-            xhr.onreadystatechange = function(){
-                //readyState 4 是表示 所有都发送成功
-                if(xhr.readyState === 4 ){
-                    if(xhr.status>=200 && xhr.status<300){
-                        //xhr.response 响应体
-                        resolve(xhr.response);
-                    }else {
-                        reject(xhr.status);
-                    }
+ function senAjax(url){
+    return new Promise((resolve,reject)=>{
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET",url);
+        xhr.send();
+         xhr.onreadystatechange = function(){
+             //readyState 4 是表示 所有都发送成功
+             if(xhr.readyState === 4 ){
+                 if(xhr.status>=200 && xhr.status<300){
+                     //xhr.response 响应体
+                     resolve(xhr.response);
+                }else {
+                    reject(xhr.status);
                 }
             }
-            
-        })
-    }
+         }
+         
+     })
+ }
  ```
 ## Promise --> [PromiseResult]
 > 实例对象中的一个属性 保存着对象 (成功/失败) 的结果,它的值只能用resolve/reject 两个函数来修改
